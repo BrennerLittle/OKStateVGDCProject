@@ -1,6 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695528897
+::res://::1695580634
 icon.svg::CompressedTexture2D::7000778996647995707::1695528415::1695528422::1::::<><>::
 README.md::TextFile::-1::1695528711::0::1::::<><>::
-::res://Scripts/::1695528890
+::res://Scenes/::1695580638
+MainMenu.tscn::PackedScene::7920598387015761111::1695580638::0::1::::<><>::res://Scripts/MainMenu.gd
+::res://Scripts/::1695531216
+MainMenu.gd::GDScript::-1::1695531216::0::1::::<>Node<>::
 ::res://Sounds/::1695528897
+::res://Sprites/::1695580705
+OKStateVGDCIcon2022-2023.png::CompressedTexture2D::6928019099331914698::1695580705::1695580706::1::::<><>::
