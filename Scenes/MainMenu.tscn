@@ -15,10 +15,11 @@ layout_mode = 0
 offset_right = 412.0
 offset_bottom = 89.0
 auto_height = true
-item_count = 3
+item_count = 4
 item_0/text = "Start"
 item_1/text = "Settings"
-item_2/text = "Quit"
+item_2/text = "Credits"
+item_3/text = "Quit"
 script = ExtResource("1_y0lpd")
 
 [connection signal="item_clicked" from="Control/ItemList" to="Control/ItemList" method="_on_item_clicked"]
