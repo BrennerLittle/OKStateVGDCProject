@@ -1,0 +1,11 @@
+Add features:
+	Ground to counteract gravity. 
+
+
+Cleanup:
+	Overlap between CharacterBody2D.gd and CharacterScene.gd. Discuss. 
+
+
+Integration:
+	We have music; need to add. 
+
