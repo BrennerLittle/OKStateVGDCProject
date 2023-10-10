@@ -14,7 +14,7 @@ float grid(vec2 uv, float velocity, float iTime)
 void fragment()
 {
     vec2 uv = (2.0 * FRAGCOORD.xy.xy - (1.0 / SCREEN_PIXEL_SIZE).xy)/(1.0 / SCREEN_PIXEL_SIZE).y;
-    float velocity = 1.0;
+    float velocity = 0.1;
    
     {
         // Grid
