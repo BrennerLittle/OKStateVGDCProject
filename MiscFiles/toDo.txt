@@ -1,11 +1,15 @@
+Quality of life:
+	Demonstrate how to add two features of the same type (example could be shader)
+		Then show how to adjust the Z-index to get one of the features to display in front of the other. 
+
+
 Add features:
 	Ground to counteract gravity. 
-
-
-Cleanup:
-	Overlap between CharacterBody2D.gd and CharacterScene.gd. Discuss. 
 
 
 Integration:
 	We have music; need to add. 
 
+
+Cleanup:
+	Overlap between CharacterBody2D.gd and CharacterScene.gd. Discuss. 
