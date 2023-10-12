@@ -23,7 +23,8 @@ func _on_item_clicked(index, at_position, mouse_button_index):
 		#credits
 		get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
 		pass
-	if(index==4):
+	if(index==3):
 		#quits game
+		print("quitted")
 		get_tree().quit()
 	pass # Replace with function body.
