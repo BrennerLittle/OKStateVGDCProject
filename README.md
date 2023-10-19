@@ -1,3 +1,4 @@
 # OKStateVGDCProject
- OKState VGDC Project 2023-2024
-// read me contains important information about game that is vital to it running successfully.
+OKState VGDC Project 2023-2024
+
+See [toDo.txt](https://github.com/BrennerLittle/OKStateVGDCProject/blob/main/MiscFiles/toDo.txt) for TODOs
