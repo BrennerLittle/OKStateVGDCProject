@@ -19,6 +19,10 @@ boot_splash/image="res://Sprites/OKStateVGDCIcon2022-2023.png"
 boot_splash/fullsize=false
 config/icon="res://Sprites/OKStateVGDCIcon2022-2023.png"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gkanban/plugin.cfg")
+
 [input]
 
 ui_graph_delete={
