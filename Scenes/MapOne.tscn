@@ -1,14 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdoaiy2pivqmx"]
+[gd_scene load_steps=4 format=3 uid="uid://bdoaiy2pivqmx"]
 
 [ext_resource type="PackedScene" uid="uid://twl8tlb4pjp0" path="res://Scenes/character_body_2d.tscn" id="1_up848"]
 [ext_resource type="Texture2D" uid="uid://c60h2pgc2l5hn" path="res://icon.svg" id="2_0cvy3"]
+[ext_resource type="TileSet" uid="uid://c3q2sttv4qw7g" path="res://Sprites/base.tres" id="3_888qc"]
 
 [node name="MapOne" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_up848")]
 z_index = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(261, 395)
-scale = Vector2(6.96875, 7.23438)
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-242, 142)
 texture = ExtResource("2_0cvy3")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5, 5)
+tile_set = ExtResource("3_888qc")
+format = 2
+layer_0/tile_data = PackedInt32Array(983106, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 131069, 2, 0, 131068, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 131067, 2, 0, 131066, 2, 0, 131065, 2, 0, 131064, 2, 0, -2, 196610, 0, -1, 196610, 0, -65536, 196610, 0, -65535, 196610, 0, -65534, 196610, 0, -65533, 196610, 0, 1, 262146, 0)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -727.0
+offset_top = -463.0
+offset_right = 865.0
+offset_bottom = 267.0
+color = Color(0.886275, 0.427451, 0.419608, 1)

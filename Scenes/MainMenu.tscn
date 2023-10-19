@@ -19,11 +19,12 @@ offset_bottom = 40.0
 [node name="ColorRect" type="ColorRect" parent="Control"]
 material = SubResource("ShaderMaterial_ndb2q")
 layout_mode = 0
-offset_right = 1220.0
+offset_right = 1155.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="ItemList" type="ItemList" parent="Control"]
+z_index = 1
 material = SubResource("ShaderMaterial_phlrm")
 layout_mode = 0
 offset_right = 412.0

@@ -18,3 +18,11 @@ boot_splash/bg_color=Color(0.996078, 0.996078, 0.996078, 1)
 boot_splash/image="res://Sprites/OKStateVGDCIcon2022-2023.png"
 boot_splash/fullsize=false
 config/icon="res://Sprites/OKStateVGDCIcon2022-2023.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gkanban/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
