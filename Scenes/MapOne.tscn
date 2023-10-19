@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://bdoaiy2pivqmx"]
+[gd_scene load_steps=3 format=3 uid="uid://bdoaiy2pivqmx"]
+
+[ext_resource type="PackedScene" uid="uid://twl8tlb4pjp0" path="res://Scenes/character_body_2d.tscn" id="1_up848"]
+[ext_resource type="Texture2D" uid="uid://c60h2pgc2l5hn" path="res://icon.svg" id="2_0cvy3"]
 
 [node name="MapOne" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_up848")]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(261, 395)
+scale = Vector2(6.96875, 7.23438)
+texture = ExtResource("2_0cvy3")
