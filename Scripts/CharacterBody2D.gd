@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal pickuptwo
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -28,12 +28,14 @@ func _physics_process(delta):
 	# Handle Jump.
 	if (Input.is_key_pressed(KEY_SPACE) and is_on_floor()) or (Input.is_key_pressed(KEY_W) and is_on_floor()):
 		velocity.y = JUMP_VELOCITY
+		$AudioStreamPlayer2D.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var direction = 
 	if (Input.is_key_pressed(KEY_A)):
 		velocity.x = SPEED * -2
+		
 	if (Input.is_key_pressed(KEY_D)):
 		velocity.x = SPEED
 	else:
@@ -41,3 +43,8 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
+
+
+func _on_coin_pickup():
+	
+	pass # Replace with function body.
