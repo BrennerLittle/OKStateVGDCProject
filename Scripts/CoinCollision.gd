@@ -1,9 +1,7 @@
 extends Node
-signal pickup
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pickup.emit()
 	pass # Replace with function body.
 
 
@@ -13,9 +11,6 @@ func _process(delta):
 	pass
 
 
-func _on_area_2d_mouse_entered():
-	pickup.emit()
+func _on_body_entered(body):
+	queue_free()
 	
-	pass # Replace with function body.
-
-

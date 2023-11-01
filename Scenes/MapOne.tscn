@@ -1,45 +1,90 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdoaiy2pivqmx"]
+[gd_scene load_steps=10 format=3 uid="uid://bdoaiy2pivqmx"]
 
-[ext_resource type="PackedScene" uid="uid://twl8tlb4pjp0" path="res://Scenes/character_body_2d.tscn" id="1_up848"]
 [ext_resource type="TileSet" uid="uid://c3q2sttv4qw7g" path="res://Sprites/base.tres" id="3_888qc"]
-[ext_resource type="Texture2D" uid="uid://c60h2pgc2l5hn" path="res://icon.svg" id="3_xj2gt"]
-[ext_resource type="PackedScene" uid="uid://c0ai5lt2mc3s5" path="res://Scenes/Coin.tscn" id="4_njst6"]
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="3_vp7cl"]
+[ext_resource type="Texture2D" uid="uid://c60h2pgc2l5hn" path="res://icon.svg" id="4_r5vyo"]
+[ext_resource type="Script" path="res://Scripts/CoinCollision.gd" id="5_xiyq3"]
+[ext_resource type="AudioStream" uid="uid://6wq0q7fcke5i" path="res://Audio/jump.wav" id="6_f2p4e"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nomx1"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44gtd"]
+size = Vector2(126, 113)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mbxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r5vyo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwvyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a788l"]
+size = Vector2(121, 121)
 
 [node name="MapOne" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_up848")]
-z_index = 1
-
 [node name="TileMap" type="TileMap" parent="."]
+z_index = 1
 scale = Vector2(5, 5)
 tile_set = ExtResource("3_888qc")
 format = 2
 layer_0/tile_data = PackedInt32Array(983106, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 65538, 0, 65541, 65538, 0, 65542, 65538, 0, 131067, 65538, 0, 131066, 65538, 0, 131065, 65538, 0, 131064, 65538, 0, -2, 196610, 0, -1, 196610, 0, -65536, 196610, 0, -65535, 196610, 0, -65534, 196610, 0, -65533, 196610, 0, 1, 262146, 0, 196600, 65538, 0, 262136, 65538, 0, 327672, 65538, 0, 393208, 65538, 0, 196601, 65538, 0, 262137, 65538, 0, 327673, 65538, 0, 393209, 65538, 0, 196602, 65538, 0, 262138, 65538, 0, 327674, 65538, 0, 393210, 65538, 0, 196603, 65538, 0, 262139, 65538, 0, 327675, 65538, 0, 393211, 65538, 0, 196604, 65538, 0, 262140, 65538, 0, 327676, 65538, 0, 393212, 65538, 0, 196605, 65538, 0, 262141, 65538, 0, 327677, 65538, 0, 393213, 65538, 0, 196606, 65538, 0, 262142, 65538, 0, 327678, 65538, 0, 393214, 65538, 0, 196607, 65538, 0, 262143, 65538, 0, 327679, 65538, 0, 393215, 65538, 0, 131072, 65538, 0, 196608, 65538, 0, 262144, 65538, 0, 327680, 65538, 0, 131073, 65538, 0, 196609, 65538, 0, 262145, 65538, 0, 327681, 65538, 0, 131074, 65538, 0, 196610, 65538, 0, 262146, 65538, 0, 327682, 65538, 0, 131075, 65538, 0, 196611, 65538, 0, 262147, 65538, 0, 327683, 65538, 0, 131076, 65538, 0, 196612, 65538, 0, 262148, 65538, 0, 327684, 65538, 0, 131077, 65538, 0, 196613, 65538, 0, 262149, 65538, 0, 327685, 65538, 0, 131078, 65538, 0, 196614, 65538, 0, 262150, 65538, 0, 327686, 65538, 0, -327674, 65538, 0, -262138, 65538, 0, -196602, 65538, 0, -131066, 65538, 0, -65530, 65538, 0, 6, 65538, 0, -327673, 65538, 0, -262137, 65538, 0, -196601, 65538, 0, -131065, 65538, 0, -65529, 65538, 0, 7, 65538, 0, 65543, 65538, 0, 131079, 65538, 0, 196615, 65538, 0, 262151, 65538, 0, -196604, 65538, 0, -131068, 65538, 0, -65532, 65538, 0, 4, 65538, 0, -196603, 65538, 0, -131067, 65538, 0, -65531, 65538, 0, 5, 65538, 0, -131080, 65538, 0, -65544, 65538, 0, -8, 65538, 0, 65528, 65538, 0, -131079, 65538, 0, -65543, 65538, 0, -7, 65538, 0, 65529, 65538, 0, -131078, 65538, 0, -65542, 65538, 0, -6, 65538, 0, 65530, 65538, 0, -131077, 65538, 0, -65541, 65538, 0, -5, 65538, 0, 65531, 65538, 0, -196614, 65538, 0, -196613, 65538, 0, -196612, 65538, 0, -131076, 65538, 0, -65540, 65538, 0, -196611, 65538, 0, -131075, 65538, 0, -65539, 65538, 0, -196610, 65538, 0, -131074, 65538, 0, -65538, 65538, 0, -196609, 65538, 0, -131073, 65538, 0, -65537, 65538, 0, -262144, 65538, 0, -196608, 65538, 0, -131072, 65538, 0, -262143, 65538, 0, -196607, 65538, 0, -131071, 65538, 0, -262142, 65538, 0, -196606, 65538, 0, -131070, 65538, 0, -262141, 65538, 0, -196605, 65538, 0, -131069, 65538, 0, -262152, 65538, 0, -196616, 65538, 0, -262151, 65538, 0, -196615, 65538, 0, -262150, 65538, 0, -262149, 65538, 0, -262148, 65538, 0, -262147, 65538, 0, -262146, 65538, 0, -262145, 65538, 0, -327680, 65538, 0, -327679, 65538, 0, -327678, 65538, 0, -327677, 65538, 0, -327676, 65538, 0, -262140, 65538, 0, -327675, 65538, 0, -262139, 65538, 0, 327687, 65538, 0, -4, 196610, 0, -3, 196610, 0, 131069, 131074, 0, 131068, 131074, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = -1
 offset_left = -780.0
 offset_top = -270.0
 offset_right = 812.0
 offset_bottom = 460.0
-color = Color(0.886275, 0.427451, 0.419608, 1)
+color = Color(0.329412, 0.654902, 0.607843, 1)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-process_material = SubResource("ParticleProcessMaterial_nomx1")
-texture = ExtResource("3_xj2gt")
+[node name="Character" type="CharacterBody2D" parent="."]
+script = ExtResource("3_vp7cl")
 
-[node name="Coin" parent="." instance=ExtResource("4_njst6")]
-position = Vector2(-196, 83)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2(3, -0.5)
+shape = SubResource("RectangleShape2D_44gtd")
 
-[node name="Coin2" parent="." instance=ExtResource("4_njst6")]
-position = Vector2(492, 63)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character"]
+sprite_frames = SubResource("SpriteFrames_6mbxd")
 
-[connection signal="pickup" from="Coin" to="CharacterBody2D" method="_on_coin_pickup"]
-[connection signal="pickup" from="Coin" to="Coin" method="_on_pickup"]
+[node name="Camera2D" type="Camera2D" parent="Character/AnimatedSprite2D"]
+
+[node name="AudioPlayer2d" type="AudioStreamPlayer2D" parent="Character"]
+stream = ExtResource("6_f2p4e")
+
+[node name="Control" type="Control" parent="Character"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HUD" type="Label" parent="Character/Control"]
+z_index = 4
+layout_mode = 0
+offset_left = -513.0
+offset_top = -294.0
+offset_right = 516.0
+offset_bottom = 282.0
+text = "coins: "
+label_settings = SubResource("LabelSettings_uwvyc")
+horizontal_alignment = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("5_xiyq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-247.5, 93.5)
+shape = SubResource("RectangleShape2D_a788l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-249, 94)
+texture = ExtResource("4_r5vyo")
+
+[connection signal="body_entered" from="Area2D" to="Character" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

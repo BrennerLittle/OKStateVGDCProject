@@ -1,6 +1,6 @@
 extends Node
-signal recieve
-var coin = 0
+
+var coin: int= 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,7 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_character_body_2d_pickuptwo():
-		coin+=1
-		$".".text=coin
-		pass # Replace with function body.
+func _on_character_colected_coins()
+	pass # Replace with function body.
