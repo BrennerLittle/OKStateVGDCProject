@@ -18,6 +18,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_e2aic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,3 +29,19 @@ shape = SubResource("RectangleShape2D_ayadi")
 sprite_frames = SubResource("SpriteFrames_51wfe")
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HUD" type="Label" parent="Control"]
+z_index = 4
+layout_mode = 0
+offset_left = -282.0
+offset_top = -153.0
+offset_right = 347.0
+offset_bottom = 174.0
+text = "coins:  "
+horizontal_alignment = 2
